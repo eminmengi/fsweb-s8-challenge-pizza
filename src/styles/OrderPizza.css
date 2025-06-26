@@ -1,291 +1,555 @@
-/* Order Pizza Page Styles */
-
-.order-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #CE2829;
-  padding: 24px 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-.header-inner {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.order-logo {
-  width: 178px;
-  height: auto;
-}
-
-.header-inner nav {
-  margin-top: 6px;
-  font-size: 12px;
-  color: #FDC913;
-}
-.order-header nav .current {
-  color: #fff;
-}
-
+/* Order Pizza Page + global styles provided by user */
 .order-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  padding: 0 0 80px;
-  box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: #fff;
+   padding-top: 1250px;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
-html, body {margin:0; padding:0;}
-
-.order-logo {
-  width: 178px;
-  height: auto;
+.nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
-.order-header nav .current {
-  color: #fff;
-}
-
-.order-container {
-  margin: 32px auto 80px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.nav-list a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+    transition: color .1s ease;
 
 }
 
-.order-page header {
-  margin-bottom: 40px;
+.nav-list a:hover {
+    color: #ce2829;
+    font-weight: 700;
 }
 
-.pizza-title {
-  margin-top: 48px;
-  text-align: left;
-  color: #292929;
+.header-row,.pizza-form {
+    max-width: 100%;
+}
+
+.header-row {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    gap: 15px;
+}
+.pizza {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pizza h2 {
+    color: #000;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.pizza-details {
+    width: 100%;
+}
+
+.price-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #000;
+    font-weight: 700;
+    font-size: 27px;
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: #999;
+    font-size: 15px;
+}
+
+.description {  
+    max-width: 550px;
+    height: 120px;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #5F5F5F;
+    font-weight: 400;
 }
 
 .pizza-form {
-  width: 100%;
-  max-width: 650px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    background-color: #fff;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 0;
+    max-width: 100%;
 }
 
-.section label,
-.section .label-title,
-.section p {
-  margin-bottom: 8px;
-  color: #292929;
+.selection-row {
+    display: flex;
 }
 
-.section input[type='text'],
-.section input[type='number'],
-.section select,
-.section textarea {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: inherit;
-  height: 40px;
-  font-size: 14px;
-  box-sizing: border-box;
+.pizza-form h4 {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 500;
 }
 
-.radio,
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: 16px;
-  margin-bottom: 8px;
-  font-size: 14px;
+h4:not(.optional):after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+.pizza-form p {
+    text-align: left;
+    margin-top: auto;
+}
+
+.pizza-form label {
+    margin-bottom: 7px;
+}
+
+.pizza-form .options-column {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3px;
+    color: #5f5f5f;
+    font-weight: 400;
+    align-items: center;
+}
+
+.pizza-form .options-column label {
+    display: flex;
+    align-items: center;
+}
+
+.size-option input[type=radio] {
+    display: none;
+}
+
+.size-option span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: #faf7f2;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .3s,color .3s;
+}
+
+.size-option input[type=radio]:checked+span {
+    background-color: #fdc913;
+    color: #000;
+}
+
+.pizza-form select {
+    padding: 15px;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #FAF7F2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #faf7f2;
+}
+
+.toppings-section {
+    text-align: left;
+}
+
+.option-number {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 600;
+    left: 10px;
 }
 
 .toppings-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.toppings-section .error {
+    margin-top: 25px;
+}
+
+.topping-option {
+    display: block;
+    position: relative;
+    padding-top: 15px;
+    padding-left: 55px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.topping-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 48px;
+    width: 48px;
+    background-color: #faf7f2;
+    border-radius: 10px;
+}
+
+.topping-option:hover input~.checkmark {
+    background-color: #faf7f2;
+}
+
+.topping-option input:checked~.checkmark {
+    background-color: #fdc913;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.topping-option input:checked~.checkmark:after {
+    display: block;
+    content: "✔";
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    font-size: 25px;
+    color: #000;
+}
+
+.user-name,
+.note-row {
+    padding: 15px 0;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.user-name h4,
+.note-row h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 500;
+}
+
+.user-name input[type="text"] {
+    padding: 15px;
+    width: 95%;
+    margin-top: 10px;
+    border: 1px solid #FAF7F2;
+    background-color: #faf7f2;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #000;
+}
+
+.user-name input[type="text"]::placeholder {
+    color: #5f5f5f;
+}
+
+.pizza-form textarea,.pizza-form input[type=number] {
+    padding: 15px;
+    width: 95%;
+    margin-top: 10px;
+    border: 1px solid #FAF7F2;
+    background-color: #faf7f2;
+    border-radius: 8px;
+    resize: none;
+}
+
+.pizza-form textarea::placeholder {
+    color: #5f5f5f;
+}
+
+.pizza-form .order {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pizza-form .quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+.pizza-form .quantity-control button {
+    background-color: #fdc913;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    transition: background-color .3s ease;
+}
+
+.pizza-form .quantity-control span {
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid #FAF7F2;
+    background-color: #faf7f2;
+    padding: 11px 15px;
+    border-radius: 5px;
+}
+
+.pizza-form .order-summary {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pizza-form .order-summary-info {
+    border: 1px solid rgb(215,213,213);
+    border-radius: 6px;
+    padding: 30px;
+    background-color: #faf7f2;
+}
+
+.pizza-form .order-total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #292929;
+    margin-left: 50px;
+}
+
+.pizza-form .user-selection,.pizza-form .user-amount {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pizza-form .user-selection {
+    color: #5f5f5f;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.pizza-form .user-amount {
+    color: #ce2829;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.pizza-form .order-button {
+    background-color: #fdc913;
+    color: #000;
+    border: 1px solid #FDC913;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 8px 0;
+    transition: background-color .3s ease;
+    width: 380px;
+    text-align: center;
+    height: 50px;
 }
 
 .error {
-  color: #CE2829;
-  font-size: 12px;
-  margin-top: 4px;
+    color: #d32f2f;
+    font-size: 12px;
+    padding-top: 10px;
+    font-weight: 700;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
-.quantity {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+hr {
+    border: none;
+    border-top: 2px solid rgb(211,209,209);
+    margin: 20px 0;
+    max-width: 700px;
 }
 
-.quantity button {
-  background: #FDC913;
-  border: none;
-  width: 40px;
-  height: 32px;
-  line-height: 32px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 4px;
+label {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
-.price-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.summary-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  width: 220px;
-  box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
-  margin: 0 auto;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.summary-card .row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.summary-card .row.total {
-  font-weight: 700;
-}
-
-.options-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.bottom-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 15px;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid #C4C4C4; /* divider after note */
-}
-
-.submit-btn {
-  background: #FDC913;
-  border: none;
-  padding: 12px 24px;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Barlow', sans-serif;
-  border-radius: 4px;
-  transition: opacity 0.2s ease;
-}
-
-.submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Divider under note section */
-.section textarea + * {
-  border-top: 1px solid #C4C4C4;
-  padding-top: 24px;
-}
-
-/* Quantity selector */
-.quantity {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  
-}
-
-.quantity button {
-  width: 56px;
-  height: 48px;
-  background: #FDC913;
-  border: none;
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
-  color: #000;
-  padding: inherit;
-}
-
-.quantity button:first-of-type {
-  border-radius: 4px 0 0 4px;
-}
-
-.quantity button:last-of-type {
-  border-radius: 0 4px 4px 0;
-}
-
-.quantity span {
-  width: 56px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  border-top: 1px solid #FDC913;
-  border-bottom: 1px solid #FDC913;
-}
-
-.summary-card {
-  width: 50%;
-  margin: initial;
-  padding: 24px 24px 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.summary-card .row.total span {
-  color: #CE2829;
-  font-weight: 700;
-}
-
-.summary-card .submit-btn {
-  margin-top: 16px;
-  margin-left: -24px;
-  margin-right: -24px;
-  width: calc(100% + 48px);
-  border-radius: 0 0 8px 8px;
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .order-container { width: 90%; }
-  .bottom-row { flex-direction: column; gap: 24px; }
-  .summary-card { width: 100%; margin-left: 0; }
-  .summary-card .submit-btn { margin-left: 0; margin-right: 0; width: 100%; }
+    .header-row h2 {
+        padding-right:0;
+        font-size: 1.5rem;
+    }
+
+    .price {
+        font-size: 1.5rem;
+        padding-left: 10px;
+    }
+
+    .price-like {
+        padding-left: 10px;
+        gap: 15px;
+        font-size: 1rem;
+    }
+
+    .description {
+        width: 90%;
+        padding-left: 10px;
+        font-size: 1rem;
+    }
+
+    .pizza-form {
+        padding-left: 0;
+    }
+
+    .pizza-form .quantity-control {
+        margin-top: 0;
+    }
+
+    .pizza-form .order-button {
+        width: 90%;
+    }
+
+    .pizza-form .order-summary-info {
+        padding: 15px;
+    }
+
+    .pizza-form .order-total {
+        margin-left: 10px;
+    }
+
+    .toppings-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-row,.pizza-form {
+        width:100%;
+    }
+
+    .description {
+        height: max-content;
+    }
+
+    .header-row img {
+        width: 90%;
+    }
+
+    .nav-list li {
+        width: max-content;
+    }
+
+    .header-row h2 {
+        font-size: 1.2rem;
+        margin-right: 85px;
+        width: max-content;
+    }
+
+    .price {
+        font-size: 1.2rem;
+        width: max-content;
+    }
+
+    .price-like {
+        font-size: .8rem;
+        gap: 15px;
+        gap: 65px;
+        width: max-content;
+    }
+
+    .pizza-form h4 {
+        font-size: 1rem;
+        width: max-content;
+    }
+
+    .selection-row {
+        width: 100%;
+        margin-left: 15px;
+    }
+
+    .selection-row .options-column {
+        width: 40px;
+    }
+
+    .selection-row .select-row {
+        width: max-content;
+        margin-right: 40px;
+    }
+
+    .toppings-section {
+        width: 100%;
+        margin-left: 15px;
+    }
+
+    .note-row {
+        max-width: 85%;
+        padding-left: 15px;
+    }
+
+    .order {
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .quantity-control {
+        width: 125px;
+    }
+
+    .order-summary-info {
+        width: 75%;
+    }
+
+    .pizza-form .order-button {
+        font-size: .9rem;
+        padding: 5px 1px;
+    }
+}
+
+:root {
+    font-family: 'Barlow';
 }

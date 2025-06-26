@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Success.css";
+import Footer from "../components/Footer.jsx";
 
 export default function Success() {
     
@@ -20,6 +21,7 @@ export default function Success() {
           SİPARİŞİNİZ ALINDI!
         </h1>
       </main>
+      <Footer />
     </div>
     )
 }
