@@ -61,7 +61,21 @@ export default function OrderPizza() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push('/success');
+    
+    const orderDetails = {
+      pizzaName: 'Position Absolute Acı Pizza',
+      size: form.size,
+      dough: form.dough,
+      toppings: form.toppings,
+      toppingsPrice: extrasCost,
+      total: total,
+      quantity: quantity
+    };
+    
+    history.push({
+      pathname: '/success',
+      state: { order: orderDetails }
+    });
   };
 
   const incQty = () => setQuantity((q) => q + 1);
@@ -86,7 +100,7 @@ export default function OrderPizza() {
               <a>Seçenekler - </a>
             </li>
               <li>
-                <a href="/siparis">Sipariş Oluştur</a>
+                <a href="/pizza">Sipariş Oluştur</a>
             </li>
           </ul>
         </nav>
@@ -224,8 +238,7 @@ export default function OrderPizza() {
         </div>
       </form>
       </div>
-
-      <Footer />
+    <Footer />
     </div>
   );
 

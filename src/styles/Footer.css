@@ -4,6 +4,8 @@
   color: #ffffff;
   font-size: 14px;
   font-family: 'Barlow', sans-serif;
+  display: block;
+  unicode-bidi: isolate;
 }
 
 .footer-content {
