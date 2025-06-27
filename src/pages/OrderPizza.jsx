@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/OrderPizza.css';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
@@ -62,19 +63,41 @@ export default function OrderPizza() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const orderDetails = {
-      pizzaName: 'Position Absolute Acı Pizza',
-      size: form.size,
-      dough: form.dough,
-      toppings: form.toppings,
-      toppingsPrice: extrasCost,
-      total: total,
-      quantity: quantity
+    const orderData = {
+      name: form.name,
+      boyut: form.size,
+      hamur: form.dough,
+      malzemeler: form.toppings,
+      adet: quantity,
+      not: form.note
     };
     
-    history.push({
-      pathname: '/success',
-      state: { order: orderDetails }
+    axios.post(
+      "https://reqres.in/api/pizza",
+      orderData,
+      {
+        headers: {
+          "x-api-key": "reqres-free-v1"
+        }
+      }
+    )
+    .then(response => {
+      console.log("Yanıt:", response.data);
+      history.push({
+        pathname: "/success",
+        state: {
+          isim: form.name,
+          boyut: form.size,
+          hamur: form.dough,
+          malzemeler: form.toppings,
+          adet: quantity,
+          not: form.note
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Sipariş gönderilirken bir hata oluştu:", error);
+      alert("Siparişiniz gönderilirken bir hata oluştu. Lütfen tekrar deneyiniz.");
     });
   };
 
