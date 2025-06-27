@@ -45,7 +45,7 @@ export default function Success() {
             )}
           </div>
 
-          <div className="order-summary">
+          <div className="suc-order-summary">
             <h3>Sipariş Toplamı</h3>
             <div className="summary-row">
               <span>Seçimler</span>
